@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Note</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href = "@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Add a new level of difficulty</h1>
+	
+	<form action="#" th:action="@{/savelevel}"  th:object= ${level} method="post">
+	<p>Description: <input type="text" th:field="${level.name}" /></p>
+	
+	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+	</form>
+	
+	
+    
+</body>
+</html>

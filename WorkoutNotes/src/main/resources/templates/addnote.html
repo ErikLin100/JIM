@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add book</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href = "@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Add a new Note</h1>
+	
+	<form action="#" th:action="@{/savenote}"  th:object= ${note} method="post">
+	<p>MuscleGroup: <input type="text" th:field="${note.musclegroup}" /></p>
+	<p>Comment: <input type="text" th:field="${note.comment}" /></p>
+	<p>Week: <input type="text" th:field="${note.week}" /></p>
+	
+							
+		  	<label for="levellist">Category</label>
+			 <select id="levellist" th:field="*{level}" class="form-control">
+       			<option th:each="level: ${levels}" th:value="${level.levelid}" th:text="${level.name}"></option>
+    		</select>
+    		<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" value="Save"></input>
+			
+	
+	</form>
+	
+    
+</body>
+</html>

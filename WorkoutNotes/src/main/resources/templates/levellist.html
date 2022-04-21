@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Note List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href = "@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Books</h1>
+	<table class="contentcategory">
+		<tr>
+			<th>Difficulty level</th>
+			
+		</tr>
+
+		<tr th:each="level : ${level}">
+			<td th:text="${level.name}">title</td>
+			
+		</tr>
+	</table>
+	<a href="/newlevel">
+	<button class=btn>New Level</button>
+	 </a>
+	 <a href="/notelist">
+	<button class=btn>Back to notes</button>
+	 </a>
+	
+
+</body>
+</html>
